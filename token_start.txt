@@ -1,0 +1,83 @@
+* Identifiers
+	Numeral			[1-9][0-9_]*
+	Floating Numeral	[1-9][0-9]*.[1-9][0-9]*
+	Variables		[_a-zA-Z][_a-zA-Z0-9]*
+
+    =
+	==
+	!=
+	>
+	>=
+	<
+	<=
+	+
+	-
+	*
+	/
+	%
+	**
+	~
+	^
+	|
+	&
+	>>
+	>>>
+	<<
+	AND
+	OR
+	NOT
+	true
+	false
+
+    (
+    )
+    {
+    }
+    [
+    ]
+    ;
+    ->
+    /*
+    */
+    :
+    _
+    .
+    "
+    '
+    ,
+
+//array bnf banana hai
+
+    State 0 --
+            alpha_num
+            alpha
+            digit
+            +   -- 0
+            -   -- 0
+            *   -- 0
+            /   -- 0
+            =   -- 1
+            >
+            <
+            %
+            ;
+            .
+            ,
+            &
+            {
+            }
+            (
+            )
+            [
+            ]
+
+State 1  -- 
+            = -- 0 (equality)
+            else -- 0 (assignment)
+State 2 -- 
+
+
+
+
+
+

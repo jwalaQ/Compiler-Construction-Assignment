@@ -1,0 +1,43 @@
+<program> -> <headers><function><main>
+
+// Program needs to have atleast 1 header.
+<headers> -> <header><headers>|<header>
+<header> -> rakho <identifier>.h
+
+<function> -> <type> <identifier>(<arguments>){<stmnts>}<function>|e
+<type> -> INT|int|FLOAT|float|BOOLEAN|boolean|STRING|string|ARRAY|array
+
+<identifier> -> <alphabet><alpha_numeric>
+<alpha_numeric> -> <alpha_num><alpha_numeric>|e
+<alpha_num> -> <alphabet>|<digit>|_
+<alphabet> -> [a-zA-Z]
+<digit> -> [0-9]
+
+<arguments> -> <type><identifier>,<arguments>|<type><identifier>|e
+<main> -> shuru{<stmnts>}khatam
+
+<stmnts> -> <stmnt>;<stmnts>|<stmnt>;
+<stmnt> -> <condStmnt>|<LoopStmnt>|<DeclStmnt>|<AssignStmnt>|<function_call>|<returnStmnt>
+
+<condStmnt> -> agar (<expr>){<stmnts>}<ya_phir><ya>
+<ya_phir> -> ya_phir (<expr>){<stmnts>}<ya_phir>|e
+<ya> -> ya {<stmnts>}|e
+
+<LoopStmnt> -> jab_tak (<expr>) tab_tak {<stmnts>}
+
+<DeclStmnt> -> <type><varList>
+<varList> -> <identifier>, <varList>|<identifier>
+
+<AssignStmnt> -> <identifier> = <arithmetic_exp>
+<arithmetic_exp> -> <term><op><term>
+<term> -> <digit>|<identifier>|<arithmetic_exp>
+<op> -> +|-|*|/|%|&
+
+<expr> -> (<term>)<rel_op>(<term>)
+<rel_op> -> <|>|<=|>=|==
+
+
+<function_call> -> <identifier>(<args_call>)
+<args_call> -> <identifier>,<args_call>|<identifier>|<arithmetic_exp>,<args_call>|<arithmetic_expr>|e
+
+<returnStmnt> -> waapas <identifier>| waapas <arithmetic_exp>
