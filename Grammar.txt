@@ -2,10 +2,10 @@
 
 // Program needs to have atleast 1 header.
 <headers> -> <header><headers>|<header>
-<header> -> rakho <identifier>.h
+<header> -> rakho <identifier>
 
 <function> -> <type> <identifier>(<arguments>){<stmnts>}<function>|e
-<type> -> INT|int|FLOAT|float|BOOLEAN|boolean|STRING|string|ARRAY|array
+<type> -> int|float|boolean|string|array
 
 <identifier> -> <alphabet><alpha_numeric>
 <alpha_numeric> -> <alpha_num><alpha_numeric>|e

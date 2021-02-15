@@ -12,13 +12,10 @@ using namespace std;
 void print(vector<Node> ans)
 {   
         for(auto it : ans){
-        cout << "+";
-        cout  << "TOKEN NAME IS -- " << it.tk_name << "\n"; 
-        cout << "lexeme is --- " << it.value << "\n";
-        cout << "line number ---" << it.line_no << "\n";
-        cout << "++++++++++++" <<"\n";
+        cout<<"Lexeme: "<<it.value<<",\t "<<"Token: "<<it.tk_name<<",\t"<<"Line number: "<<it.line_no << "\n";
     }
 }
+
 int main(int argc, char* argv[]){
     
     string line;
@@ -42,7 +39,3 @@ int main(int argc, char* argv[]){
 
     return 0;
 }
-
-
-
-

@@ -1,0 +1,6 @@
+dor34ime = 156
+shuru
+856
+int a = 5 ;
+float pie = 3.1416
+burse

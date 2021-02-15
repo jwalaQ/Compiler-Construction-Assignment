@@ -49,33 +49,57 @@
 //array bnf banana hai
 
     State 0 --
-            alpha_num
-            alpha
-            digit
-            +   -- 0
-            -   -- 0
-            *   -- 0
-            /   -- 0
-            =   -- 1
-            >
-            <
-            %
-            ;
-            .
-            ,
-            &
-            {
-            }
-            (
-            )
-            [
-            ]
+            alpha  -- 5 
+            digit  -- 6 
+            +   -- 0    (TK_PLUS)
+            -   -- 0    (TK_MINUS)
+            *   -- 0    (TK_MUL)
+            /   -- 0    (TK_DIV)
+            =   -- 1    (TK_ASSIGNMENT)
+            >   -- 2    (TK_GT)
+            <   -- 3    (TK_LT)
+            %   -- 0    (TK_MOD)
+            ;   -- 0    (TK_SEMICOLON)
+            .   -- 13   (ERROR)
+            ,   -- 0    (TK_COMMA)
+            &           (TK_AND)
+            {           (TK_CBO)
+            }           (TK_CBC)
+            (           (TK_RBO)
+            )           (TK_RBC)
+            [           (TK_SQBO)
+            ]           (TK_SQBC)
+            "   -- 4
 
 State 1  -- 
-            = -- 0 (equality)
-            else -- 0 (assignment)
+            =  (equality)
+            else (assignment)
 State 2 -- 
+            = (GE)
+            else (GT)
+State 3 -- 
+            = (LE)
+            else (LT)
+State 4 -- 
+            if(char != ") state 4, keep adding to string literal
+            else add string literal to ans and move to state 0
 
+State 5 --
+            if((isalnum(ch) || ch == '_') state 5
+            else {
+                if(keyword_checker) push keyword name and value into ans
+                else identifier
+            }
+
+State 6 -- if(is digit) state 6
+            else if(char == .) state 7
+            else state 0, output integer literal
+
+State 7 -- 
+            if(if digit) state 7
+            else state, output floating point literal;
+
+            
 
 
 

@@ -1,0 +1,5 @@
+rakho grammr.h
+
+shuru
+    int aB3c = 5;
+khatam
