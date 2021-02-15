@@ -1,6 +1,9 @@
 dor34ime = 156
-shuru
-856
-int a = 5 ;
+//shuru
+856$
+int b = a/6;
+string str = "HELLO";
+int a = 5; // testing;
 float pie = 3.1416
 burse
+123a

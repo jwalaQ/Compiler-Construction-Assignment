@@ -9,17 +9,15 @@ struct Node{
 };
 vector<Node> ans;
 
-vector<string> keyword_dict = {"int","float","bool","shuru","khatam",
-                "declare","module","driver","program",
-                "get_value","print","use","with","parameters","true",
-                "false","takes","input","returns","AND","OR","for","in",
-                "switch","case","break","default","while"
-                };       
+vector<string> keyword_dict = {"int","float","bool","array","rakho","shuru","khatam",
+                                "print","true","false","takes","input","waapas","AND",
+                                "OR","break","default","jab_tak","tab_tak","agar","ya_phir","ya"
+                            };
 
-vector<string> token_key = {"TK_TYPE","TK_TYPE","TK_TYPE","TK_START",
-                        "TK_END","DECLARE","MODULE","DRIVER","PROGRAM","GET_VALUE",
-                        "PRINT","USE","WITH","PARAMETERS","TRUE","FALSE","TAKES","INPUT","RETURNS",
-                        "AND","OR","FOR","IN","SWITCH","CASE","BREAK","DEFAULT","WHILE"};
+vector<string> token_key = {"TK_TYPE","TK_TYPE","TK_TYPE","TK_TYPE","TK_INCLUDE","TK_START","TK_FINISH",
+                            "PRINT","TRUE","FALSE","TAKES","INPUT","TK_RETURN",
+                            "AND","OR","BREAK","DEFAULT","TK_WHILE","TK_TILL","TK_COND_IF","TK_ELSE_IF", "TK_ELSE"
+                        };
                         
 
 int isKeyword(string k){
@@ -46,6 +44,7 @@ void token_extract(string line,int line_number){
     int state = 0;
     int lexeme_beginning=0, forward_pointer = 0;
     int flag = 1;
+    // string val;
     while(flag){
         switch (state){
             case 0:
@@ -66,14 +65,13 @@ void token_extract(string line,int line_number){
                 else if (line[forward_pointer]=='*'){
                     forward_pointer++;
                     lexeme_beginning = forward_pointer;
-                    insert_token("TK_MUL", "*", line_number);
+                    insert_token("TK_MULT", "*", line_number);
                     state = 0;
                 }
                 else if (line[forward_pointer]=='/'){
                     forward_pointer++;
-                    lexeme_beginning = forward_pointer;
-                    insert_token("TK_DIV", "/", line_number);
-                    state = 0;
+                    state = 8;
+                    break;
                 }
                 else if (line[forward_pointer]=='%'){
                     forward_pointer++;
@@ -96,43 +94,43 @@ void token_extract(string line,int line_number){
                 else if (line[forward_pointer]=='&'){
                     forward_pointer++;
                     lexeme_beginning = forward_pointer;
-                    insert_token("TK_AND", "&", line_number);
+                    insert_token("TOK_AND", "&", line_number);
                     state = 0;
                 }
                 else if (line[forward_pointer]=='{'){
                     forward_pointer++;
                     lexeme_beginning = forward_pointer;
-                    insert_token("TK_CBO", "{", line_number);
+                    insert_token("TK_CURLY_BO", "{", line_number);
                     state = 0;
                 }
                 else if (line[forward_pointer]=='}'){
                     forward_pointer++;
                     lexeme_beginning = forward_pointer;
-                    insert_token("TK_CBC", "}", line_number);
+                    insert_token("TK_CURLY_BC", "}", line_number);
                     state = 0;
                 }
                 else if (line[forward_pointer]=='('){
                     forward_pointer++;
                     lexeme_beginning = forward_pointer;
-                    insert_token("TK_RBO", "(", line_number);
+                    insert_token("TK_RND_BO", "(", line_number);
                     state = 0;
                 }
                 else if (line[forward_pointer]==')'){
                     forward_pointer++;
                     lexeme_beginning = forward_pointer;
-                    insert_token("TK_RBC", ")", line_number);
+                    insert_token("TK_RND_BC", ")", line_number);
                     state = 0;
                 }
                 else if (line[forward_pointer]=='['){
                     forward_pointer++;
                     lexeme_beginning = forward_pointer;
-                    insert_token("TK_SBO", "[", line_number);
+                    insert_token("TK_SQBO  ", "[", line_number);
                     state = 0;
                 }
                 else if (line[forward_pointer]==']'){
                     forward_pointer++;
                     lexeme_beginning = forward_pointer;
-                    insert_token("TK_SBC", "]", line_number);
+                    insert_token("TK_SQBC  ", "]", line_number);
                     state = 0;
                 }
                 else if (line[forward_pointer]=='='){
@@ -154,7 +152,17 @@ void token_extract(string line,int line_number){
                 else if(isdigit(line[forward_pointer])){
                     forward_pointer++;
                     state = 6;
+                }
+                else if(line[forward_pointer]=='"'){
+                    forward_pointer++;
+                    state = 4;
+                }
+                else if(line[forward_pointer]==' '){
+                    forward_pointer++;
+                    lexeme_beginning = forward_pointer;
                 }else{
+                    string val = line.substr(lexeme_beginning,forward_pointer-lexeme_beginning+1);
+                    insert_token("INVALID_TOKEN", val, line_number);
                     forward_pointer++;
                     lexeme_beginning = forward_pointer;
                 }
@@ -163,7 +171,7 @@ void token_extract(string line,int line_number){
                 if (line[forward_pointer]=='='){
                     forward_pointer++;
                     lexeme_beginning = forward_pointer;
-                    insert_token("TK_EQ", "==", line_number);
+                    insert_token("TK_EQUALITY", "==", line_number);
                     state = 0;
                 }
                 else{
@@ -176,12 +184,12 @@ void token_extract(string line,int line_number){
                 if (line[forward_pointer]=='='){
                     forward_pointer++;
                     lexeme_beginning = forward_pointer;
-                    insert_token("TK_GE", ">=", line_number);
+                    insert_token("TK_GR_EQ", ">=", line_number);
                     state = 0;
                 }
                 else{
                     lexeme_beginning = forward_pointer;
-                    insert_token("TK_GT", ">", line_number);
+                    insert_token("TK_GR_T", ">", line_number);
                     state = 0;      
                 }
                 break;
@@ -189,15 +197,28 @@ void token_extract(string line,int line_number){
                 if (line[forward_pointer]=='='){
                     forward_pointer++;
                     lexeme_beginning = forward_pointer;
-                    insert_token("TK_LE", "<=", line_number);
+                    insert_token("TK_LE_T", "<=", line_number);
                     state = 0;
                 }
                 else{
                     lexeme_beginning = forward_pointer;
-                    insert_token("TK_LT", "<", line_number);
+                    insert_token("TK_LE_T", "<", line_number);
                     state = 0;      
                 }
                 break;
+            case 4:
+                if(line[forward_pointer]!='"'){
+                    forward_pointer++;
+                    state = 4;
+                }
+                else{
+                    forward_pointer++;
+                    string val = line.substr(lexeme_beginning,forward_pointer-lexeme_beginning);
+                    insert_token("TK_STRING", val, line_number);
+                    state = 0;
+                }
+                break;
+                    
             case 5:
                 if (isalnum(line[forward_pointer])||line[forward_pointer]=='_'){
                     forward_pointer++;
@@ -226,7 +247,7 @@ void token_extract(string line,int line_number){
                     state = 0;
                     string val = line.substr(lexeme_beginning,forward_pointer-lexeme_beginning);
                     lexeme_beginning = forward_pointer;
-                    insert_token("TK_INT",val,line_number);
+                    insert_token("TK_INTEGER",val,line_number);
                 }
                 break;
             case 7:
@@ -239,6 +260,15 @@ void token_extract(string line,int line_number){
                     string val = line.substr(lexeme_beginning,forward_pointer-lexeme_beginning);
                     lexeme_beginning = forward_pointer;
                     insert_token("TK_FLOAT",val,line_number);
+                }
+                break;
+            case 8:
+                if(line[forward_pointer]=='/'){
+                    state = 13;
+                }else{
+                    lexeme_beginning = forward_pointer;
+                    insert_token("TK_DIVISION", "/", line_number);
+                    state = 0;
                 }
                 break;
             case 13:

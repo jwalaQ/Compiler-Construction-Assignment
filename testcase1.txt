@@ -1,5 +1,6 @@
-rakho grammr.h
+rakho grammr
 
 shuru
     int aB3c = 5;
+    int array[dorime];
 khatam
