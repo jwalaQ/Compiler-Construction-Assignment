@@ -1,0 +1,13 @@
+rakho brahma
+
+shuru
+    #
+    int i = 0;
+    jab_ta^k(i <= 100)tab_tak{
+        agar(i%2==0 OR i%5==0){
+            dikhao(i);
+        }
+        i = i+1;
+    }
+    ^^^
+khatam

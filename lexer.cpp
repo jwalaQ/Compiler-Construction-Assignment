@@ -10,13 +10,13 @@ struct Node{
 vector<Node> ans;
 
 vector<string> keyword_dict = {"int","float","bool","array","rakho","shuru","khatam",
-                                "print","true","false","takes","input","waapas","AND",
-                                "OR","break","default","jab_tak","tab_tak","agar","ya_phir","ya"
+                                "sahi","galat","waapas","AND",
+                                "OR","jab_tak","tab_tak","todo","agar","ya_phir","ya","dikhao","padho"
                             };
 
 vector<string> token_key = {"TK_TYPE","TK_TYPE","TK_TYPE","TK_TYPE","TK_INCLUDE","TK_START","TK_FINISH",
-                            "PRINT","TRUE","FALSE","TAKES","INPUT","TK_RETURN",
-                            "AND","OR","BREAK","DEFAULT","TK_WHILE","TK_TILL","TK_COND_IF","TK_ELSE_IF", "TK_ELSE"
+                            "TK_TRUE","TK_FALSE","TK_RETURN", "TK_AND",
+                            "TK_OR","TK_WHILE","TK_TILL","TK_BREAK","TK_COND_IF","TK_ELSE_IF", "TK_ELSE","TK_PRINT","TK_INPUT"
                         };
                         
 

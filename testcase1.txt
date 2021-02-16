@@ -1,6 +1,18 @@
-rakho grammr
+rakho andarbahar
 
+int fact(int n){
+    agar(n <= 1){
+        waapas 1;
+    }ya{
+        waapas n*fact(n-1);
+    }
+}
 shuru
-    int aB3c = 5;
-    int array[dorime];
+    int x;
+    x = 1;
+    jab_tak(x <= 10) tab_tak {
+        dikhao x;
+        dikhao(fact(x));
+        x = x+1;
+    }
 khatam

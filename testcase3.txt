@@ -1,0 +1,22 @@
+rakho andarbahar
+rakho string
+shuru 
+    int length
+    padho (length)
+    string s;
+    padho (s);
+    int i;
+    bool flag = true;
+    jab_tak(i<length/2){
+        agar(s[i]!=s[length-i-1]){
+            flag = false;
+            todo;
+        }
+    }
+    agar(flag){
+        dikhao ("Given String is a Palindrome");
+    }ya{
+        dikhao ("Given String is not a Palindrome");
+    }
+
+khatam

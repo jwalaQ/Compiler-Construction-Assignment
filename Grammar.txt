@@ -12,12 +12,13 @@
 <alpha_num> -> <alphabet>|<digit>|_
 <alphabet> -> [a-zA-Z]
 <digit> -> [0-9]
+<symbol> -> []
 
 <arguments> -> <type><identifier>,<arguments>|<type><identifier>|e
 <main> -> shuru{<stmnts>}khatam
 
 <stmnts> -> <stmnt>;<stmnts>|<stmnt>;
-<stmnt> -> <condStmnt>|<LoopStmnt>|<DeclStmnt>|<AssignStmnt>|<function_call>|<returnStmnt>
+<stmnt> -> <condStmnt>|<LoopStmnt>|<DeclStmnt>|<AssignStmnt>|<function_call>|<returnStmnt>|<printStmnt>|<scanStmnt>
 
 <condStmnt> -> agar (<expr>){<stmnts>}<ya_phir><ya>
 <ya_phir> -> ya_phir (<expr>){<stmnts>}<ya_phir>|e
@@ -38,6 +39,9 @@
 
 
 <function_call> -> <identifier>(<args_call>)
-<args_call> -> <identifier>,<args_call>|<identifier>|<arithmetic_exp>,<args_call>|<arithmetic_expr>|e
+<args_call> -> <identifier>,<args_call>|<identifier>|<arithmetic_exp>,<args_call>|<arithmetic_expr>|<string_lit>|e
 
 <returnStmnt> -> waapas <identifier>| waapas <arithmetic_exp>
+
+<string_lit> -> ""
+<printStmnt> -> dikhao(<args_call>)|dikhao(<args_call>,<function_call>)

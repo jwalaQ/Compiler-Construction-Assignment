@@ -13,7 +13,7 @@ void print(vector<Node> ans)
 {   
     for(auto it : ans){
         if(it.tk_name.compare("INVALID_TOKEN")!=0)
-            cout<<"Lexeme: "<<it.value<<",\t\t "<<"Token: "<<it.tk_name<<",\t\t"<<"Line number: "<<it.line_no << "\n";
+            cout<<"Lexeme: "<<it.value<<",\t\t"<<"Token: "<<it.tk_name<<",\t\t"<<"Line number: "<<it.line_no << "\n";
         else
             cout << "LEXICAL ERROR: Invalid character '"<<it.value<<"' found at Line number: "<<it.line_no<<"\n";
     }

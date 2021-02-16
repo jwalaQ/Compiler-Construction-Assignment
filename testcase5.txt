@@ -1,0 +1,20 @@
+rakho andarbahar
+rakho string
+shuru 
+    int length
+    padho (length)
+    int array a[length];
+    int i = 0;
+    jab_tak(i<length)tab_tak{
+        padho(a[i]);
+    }
+    int index = -1;
+    int max_element = -9999;
+    jab_tak(i<length)tab_tak{
+        if(a[i]>max_element){
+            max_element = a[i];
+            index = i;
+        }
+    }
+    dikhao ("Maximum element is ",max_element, "found at index", index);
+khatam

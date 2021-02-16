@@ -1,0 +1,25 @@
+rakho quantum
+$
+shuru
+    int n, i;
+    padho n;
+    int array[n];
+    jab_tak(i < n)tab_tak{
+        padho array[i];
+        i = i +1;
+    }
+    int odd_num = 0;
+    int even_num = 0;
+    i = 0;
+    jab_tak(i < n) tab_tak{
+        agar(i%2==0){
+            odd_num = odd_num+1;
+        }ya{
+            even_num = even_num+1;
+        }
+        i = i+1;
+    }
+    dikhao (odd_num) 
+    dikhao (nl)
+    dikhao (even_num)
+khatam
