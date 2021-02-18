@@ -1,9 +1,7 @@
-<<<driver program>>>
-start
-	
-end
-<<module empty>>
-takes input[a:boolean];
-start
 
-end
+rakho string
+
+shuru
+str = "abc"
+float n = 123.1.1;
+khatam
