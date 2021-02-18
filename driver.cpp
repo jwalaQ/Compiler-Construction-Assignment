@@ -3,19 +3,20 @@
 #include <bits/stdc++.h>
 using namespace std;
 #include "lexer.h"
-// struct Node{
-//     string tk_name;
-//     string value;
-//     int line_no;
-// };
-//vector<Node> ans;
+
 void print(vector<Node> ans)
 {   
     for(auto it : ans){
-        if(it.tk_name.compare("INVALID_TOKEN")!=0)
+        if(it.tk_name.compare("String_error")==0){
+            cout << "LEXICAL ERROR: String not terminated '"<<it.value<<"' found at Line number: "<<it.line_no<<"\n";
+        }
+        else if(it.tk_name.compare("Float_error")==0){
+            cout << "LEXICAL ERROR: Invalid float format '"<<it.value<<"' found at Line number: "<<it.line_no<<"\n";
+        }
+        else if(it.tk_name.compare("INVALID_TOKEN")!=0) 
             cout<<"Lexeme: "<<it.value<<",\t\t"<<"Token: "<<it.tk_name<<",\t\t"<<"Line number: "<<it.line_no << "\n";
         else
-            cout << "LEXICAL ERROR: Invalid character '"<<it.value<<"' found at Line number: "<<it.line_no<<"\n";
+            cout << "LEXICAL ERROR: Invalid '"<<it.value<<"' found at Line number: "<<it.line_no<<"\n";
     }
 }
 
@@ -28,7 +29,8 @@ int main(int argc, char* argv[]){
     
     if(myfile.is_open()){
         while(getline(myfile,line)){
-            token_extract(line, line_number);
+            if(line.size()>0)
+                token_extract(line, line_number);
             line_number++;
         }
         vector<Node> ans = get_ans();

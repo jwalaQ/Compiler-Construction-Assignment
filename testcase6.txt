@@ -2,6 +2,9 @@
 rakho string
 
 shuru
-str = "abc"
-float n = 123.1.1;
+int a;
+    str = "abc blah~blah";
+str = "!~`?-";
+float n = 123.;
+abc" int a = 5;
 khatam

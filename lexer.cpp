@@ -157,7 +157,7 @@ void token_extract(string line,int line_number){
                     forward_pointer++;
                     state = 4;
                 }
-                else if(line[forward_pointer]==' '){
+                else if(line[forward_pointer]==' '||line[forward_pointer]=='\t'){
                     forward_pointer++;
                     lexeme_beginning = forward_pointer;
                 }else{
@@ -217,6 +217,12 @@ void token_extract(string line,int line_number){
                     insert_token("TK_STRING", val, line_number);
                     state = 0;
                 }
+                if(forward_pointer>=line.size()){
+                    //insert_token("ERROR","string error", line_number );
+                    string val = line.substr(lexeme_beginning,forward_pointer-lexeme_beginning);
+                    insert_token("String_error", val, line_number);
+                    state = 13;
+                }
                 break;
                     
             case 5:
@@ -256,11 +262,29 @@ void token_extract(string line,int line_number){
                     state = 7;
                 }
                 else{
-                    state = 0;
-                    string val = line.substr(lexeme_beginning,forward_pointer-lexeme_beginning);
-                    lexeme_beginning = forward_pointer;
-                    insert_token("TK_FLOAT",val,line_number);
+                    if(line[forward_pointer]==' '){
+                        if(line[forward_pointer-1]=='.'){
+                            state = 0;
+                            string val = line.substr(lexeme_beginning,forward_pointer-lexeme_beginning);
+                            lexeme_beginning = forward_pointer;
+                            insert_token("Float_error",val, line_number);
+                        }
+                        else{
+                            state = 0;
+                            string val = line.substr(lexeme_beginning,forward_pointer-lexeme_beginning);
+                            lexeme_beginning = forward_pointer;
+                            insert_token("TK_FLOAT",val,line_number);
+                        }
+                    }else{
+                        state = 0;
+                        string val = line.substr(lexeme_beginning,forward_pointer-lexeme_beginning);
+                        lexeme_beginning = forward_pointer;
+                        insert_token("Float_error",val,line_number);
+                    }
                 }
+                // if(state==0&&!isdigit(line[forward_pointer])){
+                //     cout << "dot vala error";
+                // }
                 break;
             case 8:
                 if(line[forward_pointer]=='/'){
