@@ -1,5 +1,3 @@
-#include <fstream>
-#include <iostream>
 #include<bits/stdc++.h>
 using namespace std;
 struct Node{
@@ -29,12 +27,10 @@ int isKeyword(string k){
 }
 
 void insert_token(string tk_name, string token, int line_number){
-    // cout << token << endl;
     Node *temp = new Node();
     temp->tk_name = tk_name;
     temp->value = token;
     temp->line_no = line_number;
-    // cout << "a" << endl;
     ans.push_back(*temp);
 }
 
@@ -44,7 +40,6 @@ void token_extract(string line,int line_number){
     int state = 0;
     int lexeme_beginning=0, forward_pointer = 0;
     int flag = 1;
-    // string val;
     while(flag){
         switch (state){
             case 0:
@@ -218,7 +213,6 @@ void token_extract(string line,int line_number){
                     state = 0;
                 }
                 if(forward_pointer>=line.size()){
-                    //insert_token("ERROR","string error", line_number );
                     string val = line.substr(lexeme_beginning,forward_pointer-lexeme_beginning);
                     insert_token("String_error", val, line_number);
                     state = 13;
@@ -282,9 +276,6 @@ void token_extract(string line,int line_number){
                         insert_token("Float_error",val,line_number);
                     }
                 }
-                // if(state==0&&!isdigit(line[forward_pointer])){
-                //     cout << "dot vala error";
-                // }
                 break;
             case 8:
                 if(line[forward_pointer]=='/'){
@@ -304,5 +295,3 @@ void token_extract(string line,int line_number){
 vector<Node> get_ans(){
     return ans;
 }
-
-

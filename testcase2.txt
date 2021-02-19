@@ -1,9 +1,12 @@
+// dorime code to calculate number of even and odd numbers in an array
+// uses while loop (jab_tak() tab_tak{})
+
 rakho quantum
 $
 shuru
     int n, i;
     padho n;
-    int array[n];
+    int array[n];               //define an array of size n
     jab_tak(i < n)tab_tak{
         padho array[i];
         i = i +1;
@@ -21,5 +24,5 @@ shuru
     }
     dikhao (odd_num) 
     dikhao (nl)
-    dikhao (even_num
+    dikhao (even_num)
 khatam

@@ -1,5 +1,8 @@
+// dorime code to get max element of an array
+
 rakho andarbahar
 rakho string
+
 shuru 
     int length
     padho (length)
@@ -7,6 +10,7 @@ shuru
     int i = 0;
     jab_tak(i<length)tab_tak{
         padho(a[i]);
+        i = i+1;
     }
     int index = -1;
     int max_element = -9999;
@@ -15,6 +19,7 @@ shuru
             max_element = a[i];
             index = i;
         }
+        i = i+1;
     }
     dikhao ("Maximum element is ",max_element, "found at index", index);
 khatam

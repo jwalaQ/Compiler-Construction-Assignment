@@ -1,7 +1,9 @@
+// dorime code to print numbers divisible by 2 or 5
+
 rakho brahma
 
 shuru
-    #
+    #   // gives error
     int i = 0;
     jab_tak^(i <= 100)tab_tak{
         agar(i%2==0 OR i%5==0){

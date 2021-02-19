@@ -1,6 +1,8 @@
+// dorime code for finding factorial of a number 
+// uses while and conditional statement
 rakho andarbahar
 
-int fact(int n){
+int fact(int n){        //factorial function
     agar(n <= 1){
         waapas 1;
     }ya{

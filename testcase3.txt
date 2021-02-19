@@ -1,13 +1,15 @@
+// dorime code to check whether a given string is a palindrome or not
+
 rakho andarbahar
 rakho string
 shuru 
     int length
     padho (length)
-    string s;
+    string s,a="abc;
     padho (s);
     int i;
     bool flag = true;
-    jab_tak(i<length/2){
+    jab_tak(i<length/2)tab_tak{
         agar(s[i]!=s[length-i-1]){
             flag = false;
             todo;
