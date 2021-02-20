@@ -23,3 +23,10 @@ shuru
     }
     dikhao ("Maximum element is ",max_element, "found at index", index);
 khatam
+
+// ********** GROUP DETAILS **********
+// Parth Krishna Sharma - 2017B3A70907H
+// Prajjwal Vijaywargiya - 2017B3A70954H
+// Piyush Pathak - 2017B3A70425H
+// Siddhi Burse - 2017B3A70972H
+// ***********************************
