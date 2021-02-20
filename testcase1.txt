@@ -1,3 +1,10 @@
+// ********** GROUP DETAILS **********
+// Parth Krishna Sharma - 2017B3A70907H
+// Prajjwal Vijaywargiya - 2017B3A70954H
+// Piyush Pathak - 2017B3A70425H
+// Siddhi Burse - 2017B3A70972H
+// ***********************************
+
 // dorime code for finding factorial of a number 
 // uses while and conditional statement
 rakho andarbahar
@@ -18,9 +25,4 @@ shuru
         x = x+1;
     }
 khatam
-// ********** GROUP DETAILS **********
-// Parth Krishna Sharma - 2017B3A70907H
-// Prajjwal Vijaywargiya - 2017B3A70954H
-// Piyush Pathak - 2017B3A70425H
-// Siddhi Burse - 2017B3A70972H
-// ***********************************
+

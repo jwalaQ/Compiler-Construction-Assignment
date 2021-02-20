@@ -1,26 +1,26 @@
-Lexeme: rakho,		Token: TK_INCLUDE,		Line number: 3
-Lexeme: string,		Token: IDENTIFIER,		Line number: 3
-Lexeme: shuru,		Token: TK_START,		Line number: 5
-Lexeme: int,		Token: TK_TYPE,		Line number: 6
-Lexeme: a,		Token: IDENTIFIER,		Line number: 6
-Lexeme: ;,		Token: TK_SEMICOLON,		Line number: 6
-Lexeme: str,		Token: IDENTIFIER,		Line number: 7
-Lexeme: =,		Token: TK_ASSIGNMENT,		Line number: 7
-Lexeme: "abc blah~blah",		Token: TK_STRING,		Line number: 7
-Lexeme: ;,		Token: TK_SEMICOLON,		Line number: 7
-Lexeme: int,		Token: TK_TYPE,		Line number: 8
-LEXICAL ERROR: Invalid '~' found at Line number: 8
-Lexeme: 2,		Token: TK_INTEGER,		Line number: 8
-Lexeme: ;,		Token: TK_SEMICOLON,		Line number: 8
-Lexeme: str,		Token: IDENTIFIER,		Line number: 9
-Lexeme: =,		Token: TK_ASSIGNMENT,		Line number: 9
-Lexeme: "!~`?-",		Token: TK_STRING,		Line number: 9
-Lexeme: ;,		Token: TK_SEMICOLON,		Line number: 9
-Lexeme: float,		Token: TK_TYPE,		Line number: 10
-Lexeme: n,		Token: IDENTIFIER,		Line number: 10
-Lexeme: =,		Token: TK_ASSIGNMENT,		Line number: 10
-LEXICAL ERROR: Invalid float format '123.' found at Line number: 10
-Lexeme: ;,		Token: TK_SEMICOLON,		Line number: 10
-Lexeme: abc,		Token: IDENTIFIER,		Line number: 11
-LEXICAL ERROR: String not terminated '" int a = 5;' found at Line number: 11
-Lexeme: khatam,		Token: TK_FINISH,		Line number: 12
+Lexeme: rakho,		Token: TK_INCLUDE,		Line number: 10
+Lexeme: string,		Token: IDENTIFIER,		Line number: 10
+Lexeme: shuru,		Token: TK_START,		Line number: 12
+Lexeme: int,		Token: TK_TYPE,		Line number: 13
+Lexeme: a,		Token: IDENTIFIER,		Line number: 13
+Lexeme: ;,		Token: TK_SEMICOLON,		Line number: 13
+Lexeme: str,		Token: IDENTIFIER,		Line number: 14
+Lexeme: =,		Token: TK_ASSIGNMENT,		Line number: 14
+Lexeme: "abc blah~blah",		Token: TK_STRING,		Line number: 14
+Lexeme: ;,		Token: TK_SEMICOLON,		Line number: 14
+Lexeme: int,		Token: TK_TYPE,		Line number: 15
+LEXICAL ERROR: Invalid '~' found at Line number: 15
+Lexeme: 2,		Token: TK_INTEGER,		Line number: 15
+Lexeme: ;,		Token: TK_SEMICOLON,		Line number: 15
+Lexeme: str,		Token: IDENTIFIER,		Line number: 16
+Lexeme: =,		Token: TK_ASSIGNMENT,		Line number: 16
+Lexeme: "!~`?-",		Token: TK_STRING,		Line number: 16
+Lexeme: ;,		Token: TK_SEMICOLON,		Line number: 16
+Lexeme: float,		Token: TK_TYPE,		Line number: 17
+Lexeme: n,		Token: IDENTIFIER,		Line number: 17
+Lexeme: =,		Token: TK_ASSIGNMENT,		Line number: 17
+LEXICAL ERROR: Invalid float format '123.' found at Line number: 17
+Lexeme: ;,		Token: TK_SEMICOLON,		Line number: 17
+Lexeme: abc,		Token: IDENTIFIER,		Line number: 18
+LEXICAL ERROR: String not terminated '" int a = 5; // gives string error' found at Line number: 18
+Lexeme: khatam,		Token: TK_FINISH,		Line number: 19

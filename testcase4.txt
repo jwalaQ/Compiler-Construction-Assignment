@@ -1,3 +1,10 @@
+// ********** GROUP DETAILS **********
+// Parth Krishna Sharma - 2017B3A70907H
+// Prajjwal Vijaywargiya - 2017B3A70954H
+// Piyush Pathak - 2017B3A70425H
+// Siddhi Burse - 2017B3A70972H
+// ***********************************
+
 // dorime code to print numbers divisible by 2 or 5
 
 rakho brahma
@@ -15,10 +22,3 @@ shuru
 	int a;
 	whi le
 khatam
-
-// ********** GROUP DETAILS **********
-// Parth Krishna Sharma - 2017B3A70907H
-// Prajjwal Vijaywargiya - 2017B3A70954H
-// Piyush Pathak - 2017B3A70425H
-// Siddhi Burse - 2017B3A70972H
-// ***********************************

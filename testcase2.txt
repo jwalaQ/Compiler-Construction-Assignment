@@ -1,3 +1,10 @@
+// ********** GROUP DETAILS **********
+// Parth Krishna Sharma - 2017B3A70907H
+// Prajjwal Vijaywargiya - 2017B3A70954H
+// Piyush Pathak - 2017B3A70425H
+// Siddhi Burse - 2017B3A70972H
+// ***********************************
+
 // dorime code to calculate number of even and odd numbers in an array
 // uses while loop (jab_tak() tab_tak{})
 
@@ -26,9 +33,3 @@ shuru
     dikhao (nl)
     dikhao (even_num)
 khatam
-// ********** GROUP DETAILS **********
-// Parth Krishna Sharma - 2017B3A70907H
-// Prajjwal Vijaywargiya - 2017B3A70954H
-// Piyush Pathak - 2017B3A70425H
-// Siddhi Burse - 2017B3A70972H
-// ***********************************
